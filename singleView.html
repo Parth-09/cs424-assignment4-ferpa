@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<style> body {font-family: system-ui, Arial} </style>
 
 <head>
     <meta charset="UTF-8">
@@ -13,21 +14,24 @@
 
 <body>
     <div class="navbar">
+      <a href="index.html">Home</a>
       <a href="singleView.html">Single View</a>
       <a href="linkedView.html">Linked View</a>
       <a href="spatialView.html">Spatial View</a>
     </div>
 
+    <h1>Pie Charts (Quantitative Distribution)</h1>
     <div class="grid1">
-        <div class="visualization" id="vis1">
-          <p>Test</p>
-        </div>        
+        <div class="visualization" id="vis1"></div>        
         <div class="visualization" id="vis2"></div>
-        <div class="visualization" id="vis3"></div>
-        <div class="visualization" id="vis4"></div>
-        <div class="visualization" id="vis5"></div>
-
     </div>
+
+    <h1>Bar & Line Charts (Distribution over Time)</h1>
+    <div class="grid1">
+      <div class="visualization" id="vis3"></div>
+      <div class="visualization" id="vis4"></div>
+      <div class="visualization" id="vis5"></div>
+  </div>
     <script src="./script.js"></script>
 </body>
 

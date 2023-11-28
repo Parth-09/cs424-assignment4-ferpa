@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 
-      "viz1 viz3 viz5"
-      "viz2 viz4 viz6";
+      "viz1 viz2 viz6"
+      "viz3 viz4 viz5";
   gap: 20px;
   width: 100%;
   max-width: 1440px;
@@ -11,9 +11,11 @@
 }
 .grid2 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas: 
-      "viz7 viz8 viz9";
+      "viz7"
+      "viz8"
+      "viz9";
   gap: 20px;
   width: 100%;
   max-width: 1440px;
@@ -23,7 +25,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 
-      "viz6 viz10";
+      "viz6" "viz10";
   gap: 20px;
   width: 100%;
   max-width: 1440px;

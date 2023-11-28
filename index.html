@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<style> 
+  body {font-family: system-ui, Arial;}
+  h1, h2, h3, h4 {
+    font-family: system-ui, Arial; 
+    color:black; 
+    text-shadow: 1px 1px 2px grey;
+  }
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+} 
+
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -13,13 +34,20 @@
 
 <body>
     <div class="navbar">
+      <a href="index.html">Home</a>
       <a href="singleView.html">Single View</a>
       <a href="linkedView.html">Linked View</a>
       <a href="spatialView.html">Spatial View</a>
     </div>
-    <p>Hello we are team Ferpa and this is our presentation!!!</p>
-    <p>Member 1: Fernando Mantilla<br>
-       Member 2: Parth Tawde </p>
+
+    <div class="container">
+      <img src="overlay.png" style="width:100%; filter: blur(4px);">
+      <div class="centered">
+        <h1 style="font-size:5vw; color:white">Team FERPA</h1>
+        <h3 style="font-size:2vw">CS 424: Data Visualization and Analytics</h3>
+        <h4 style="font-size:2vw">developed by Fernando Mantilla & Parth Tawde</h4>
+      </div>
+    </div>
     <script src="./script.js"></script>
 </body>
 

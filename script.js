@@ -45,7 +45,7 @@ const spec2 = {
       },
     },
     {
-      mark: { type: "text", radiusOffset: 17 },
+      mark: { type: "text", radiusOffset: 30 },
       encoding: {
         text: { field: "Community Area", type: "nominal" },
         theta: { field: "Count", type: "quantitative", stack: true },
