@@ -1,0 +1,42 @@
+[
+  {
+    "SR_TYPE": "Tree Planting Request",
+    "DURATION_DAYS": 430.58699833311965
+  },
+  {
+    "SR_TYPE": "Sidewalk Inspection Request",
+    "DURATION_DAYS": 404.1980343722079
+  },
+  {
+    "SR_TYPE": "Bicycle Request/Complaint",
+    "DURATION_DAYS": 378.5491150442478
+  },
+  {
+    "SR_TYPE": "311 INFORMATION ONLY CALL",
+    "DURATION_DAYS": 349.2068965517241
+  },
+  {
+    "SR_TYPE": "Licensed Pharmaceutical Representative Complaint",
+    "DURATION_DAYS": 323.125
+  },
+  {
+    "SR_TYPE": "Pushcart Food Vendor Complaint",
+    "DURATION_DAYS": 303.73604060913704
+  },
+  {
+    "SR_TYPE": "Street Light Pole Door Missing Complaint",
+    "DURATION_DAYS": 293.1955143832277
+  },
+  {
+    "SR_TYPE": "Street Light On During Day Complaint",
+    "DURATION_DAYS": 292.0658508158508
+  },
+  {
+    "SR_TYPE": "Tree Trim Request (NO LONGER BEING ACCEPTED)",
+    "DURATION_DAYS": 275.2455061068931
+  },
+  {
+    "SR_TYPE": "Water Lead Test Visit Request",
+    "DURATION_DAYS": 270.7539119804401
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Type": "Street Light Out Complaint",
+    "Count": 115743
+  },
+  {
+    "Type": "Pothole in Street Complaint",
+    "Count": 75021
+  },
+  {
+    "Type": "Tree Trim Request",
+    "Count": 24732
+  },
+  {
+    "Type": "Alley Light Out Complaint",
+    "Count": 23649
+  },
+  {
+    "Type": "Traffic Signal Out Complaint",
+    "Count": 20359
+  },
+  {
+    "Type": "Garbage Cart Maintenance",
+    "Count": 19200
+  }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "Area": "Central",
+    "Origin": "Phone Calls",
+    "Count": 48289
+  },
+  {
+    "Area": "Central",
+    "Origin": "Internet",
+    "Count": 26301
+  },
+  {
+    "Area": "Central",
+    "Origin": "Mobile Device",
+    "Count": 16872
+  },
+  {
+    "Area": "Far North",
+    "Origin": "Phone Calls",
+    "Count": 219741
+  },
+  {
+    "Area": "Far North",
+    "Origin": "Internet",
+    "Count": 116145
+  },
+  {
+    "Area": "Far North",
+    "Origin": "Mobile Device",
+    "Count": 72493
+  },
+  {
+    "Area": "Northwest",
+    "Origin": "Phone Calls",
+    "Count": 169450
+  },
+  {
+    "Area": "Northwest",
+    "Origin": "Internet",
+    "Count": 87764
+  },
+  {
+    "Area": "Northwest",
+    "Origin": "Mobile Device",
+    "Count": 56629
+  },
+  {
+    "Area": "North Side",
+    "Origin": "Phone Calls",
+    "Count": 141122
+  },
+  {
+    "Area": "North Side",
+    "Origin": "Internet",
+    "Count": 96521
+  },
+  {
+    "Area": "North Side",
+    "Origin": "Mobile Device",
+    "Count": 62025
+  },
+  {
+    "Area": "West Side",
+    "Origin": "Phone Calls",
+    "Count": 325054
+  },
+  {
+    "Area": "West Side",
+    "Origin": "Internet",
+    "Count": 113560
+  },
+  {
+    "Area": "West Side",
+    "Origin": "Mobile Device",
+    "Count": 83028
+  },
+  {
+    "Area": "Far South",
+    "Origin": "Phone Calls",
+    "Count": 299991
+  },
+  {
+    "Area": "Far South",
+    "Origin": "Internet",
+    "Count": 54089
+  },
+  {
+    "Area": "Far South",
+    "Origin": "Mobile Device",
+    "Count": 25322
+  },
+  {
+    "Area": "Far South",
+    "Origin": "Phone Calls",
+    "Count": 199987
+  },
+  {
+    "Area": "Far South",
+    "Origin": "Internet",
+    "Count": 46487
+  },
+  {
+    "Area": "Far South",
+    "Origin": "Mobile Device",
+    "Count": 23794
+  },
+  {
+    "Area": "Southwest",
+    "Origin": "Phone Calls",
+    "Count": 306985
+  },
+  {
+    "Area": "Southwest",
+    "Origin": "Internet",
+    "Count": 102445
+  },
+  {
+    "Area": "Southwest",
+    "Origin": "Mobile Device",
+    "Count": 64834
+  },
+  {
+    "Area": "South Side",
+    "Origin": "Phone Calls",
+    "Count": 210634
+  },
+  {
+    "Area": "South Side",
+    "Origin": "Internet",
+    "Count": 49552
+  },
+  {
+    "Area": "South Side",
+    "Origin": "Mobile Device",
+    "Count": 27763
+  }
+]

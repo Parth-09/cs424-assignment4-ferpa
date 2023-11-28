@@ -1,0 +1,127 @@
+[
+  {
+    "OWNER_DEPARTMENT": "311 City Services",
+    "COUNT": 3133360,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Animal Care and Control",
+    "COUNT": 135859,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Aviation",
+    "COUNT": 1438857,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "BACP - Business Affairs and Consumer Protection",
+    "COUNT": 53543,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "CDOT - Department of Transportation",
+    "COUNT": 911734,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "City Clerk's Office",
+    "COUNT": 8795,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "DOB - Buildings",
+    "COUNT": 158557,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "DWM - Department of Water Management",
+    "COUNT": 232240,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Department of Housing",
+    "COUNT": 1490,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Department of Planning and Development",
+    "COUNT": 876,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Extreme Weather Notification",
+    "COUNT": 35,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Finance",
+    "COUNT": 1890,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Fire",
+    "COUNT": 829,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Health",
+    "COUNT": 12411,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Outside Agencies",
+    "COUNT": 4333,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Streets and Sanitation",
+    "COUNT": 2023982,
+    "STATUS": "Completed"
+  },
+  {
+    "OWNER_DEPARTMENT": "Animal Care and Control",
+    "COUNT": 8832,
+    "STATUS": "Canceled"
+  },
+  {
+    "OWNER_DEPARTMENT": "BACP - Business Affairs and Consumer Protection",
+    "COUNT": 1761,
+    "STATUS": "Canceled"
+  },
+  {
+    "OWNER_DEPARTMENT": "CDOT - Department of Transportation",
+    "COUNT": 24710,
+    "STATUS": "Canceled"
+  },
+  {
+    "OWNER_DEPARTMENT": "DOB - Buildings",
+    "COUNT": 2261,
+    "STATUS": "Canceled"
+  },
+  {
+    "OWNER_DEPARTMENT": "DWM - Department of Water Management",
+    "COUNT": 42198,
+    "STATUS": "Canceled"
+  },
+  {
+    "OWNER_DEPARTMENT": "Fire",
+    "COUNT": 3,
+    "STATUS": "Canceled"
+  },
+  {
+    "OWNER_DEPARTMENT": "Health",
+    "COUNT": 2433,
+    "STATUS": "Canceled"
+  },
+  {
+    "OWNER_DEPARTMENT": "Outside Agencies",
+    "COUNT": 49,
+    "STATUS": "Canceled"
+  },
+  {
+    "OWNER_DEPARTMENT": "Streets and Sanitation",
+    "COUNT": 15496,
+    "STATUS": "Canceled"
+  }
+]
