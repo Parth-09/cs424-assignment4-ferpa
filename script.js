@@ -276,3 +276,58 @@ const spec10 = {
   },
 };
 vegaEmbed("#vis10", spec10);
+
+const test = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 300,
+  "height": 300,
+  "title": {"text": "Amount of Service Requests Received (Time of Day)", "anchor": "start"},
+  "data": {
+    "url": "s3-meanAMPM.json",
+  },
+
+  "params": [
+    {
+      "name": "highlight",
+      "select": {"type": "point", "on": "pointerover"}
+    },
+    {"name": "select", "select": "point"}
+  ],
+
+  "mark": {
+    "type": "bar", 
+    "point": true, 
+    "tooltip": true,
+    "stroke": "black",
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "x": {"field": "Time", "type": "ordinal"}, // Assuming 'Time' is an ordinal data type
+    "y": {"field": "Count", "type": "quantitative"},
+    "fillOpacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "select",
+          "empty": false,
+          "value": 2
+        },
+        {
+          "param": "highlight",
+          "empty": false,
+          "value": 1
+        }
+      ],
+      "value": 0
+    }
+  },
+  "config": {
+    "scale": {
+      "bandPaddingInner": 0.2
+    }
+  }
+};
+vegaEmbed("#visT", test);
