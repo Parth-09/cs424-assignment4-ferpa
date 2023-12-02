@@ -1,4 +1,4 @@
-const spec1 = {
+var spec1 = {
   $schema: "https://vega.github.io/schema/vega-lite/v4.json",
   width: 300,
   height: 300,
@@ -28,7 +28,7 @@ const spec1 = {
 };
 vegaEmbed("#vis1", spec1);
 
-const spec2 = {
+var spec2 = {
   $schema: "https://vega.github.io/schema/vega-lite/v4.json",
   width: 300,
   height: 300,
@@ -59,7 +59,7 @@ const spec2 = {
 };
 vegaEmbed("#vis2", spec2);
 
-const spec3 = {
+var spec3 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 300,
   "height": 300,
@@ -75,7 +75,7 @@ const spec3 = {
 };
 vegaEmbed("#vis3", spec3);
 
-const spec4 = {
+var spec4 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 300,
   "height": 300,
@@ -98,7 +98,7 @@ const spec4 = {
 vegaEmbed("#vis4", spec4);
 
 
-const spec5 = {
+var spec5 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 300,
   "height": 300,
@@ -120,60 +120,13 @@ const spec5 = {
 };
 vegaEmbed("#vis5", spec5);
 
-const spec6 = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 500,
-  "height": 500,
-  "title": {"text": "Chicago Wards & 311 Service Requests","anchor": "start"},
-  "data": {
-    "url": "boundaries-ward.geojson",
-    "format": {"property": "features"},
-  },
-  "transform": [{
-        "lookup": "properties.ward",
-        "from": {
-          "data": {"url": "L1-wardSRs.json"},
-          "key": "WARD",
-          "fields": ["WARD", "SR_COUNT"]
-        }
-      }],
-  "mark": "geoshape",
-  "encoding": {
-    "color": {
-    "field": "SR_COUNT",
-    "type": "quantitative",
-    "legend": {
-        "title": null,
-      },
-    "scale": {
-        "scheme": "goldred"
-      }
-    },
-    "projection": {
-      "type": "mercator"
-  },
-    "tooltip": [{
-      "field": "properties.ward",
-      "type": "nominal",
-      "title": "Ward"
-    },
-    {
-      "field": "SR_COUNT",
-      "type": "quantitative",
-      "title": "Service Requests"
-    }
-    ]
-  },
-};
-vegaEmbed("#vis6", spec6);
-
-const spec7 = {
+var spec7 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": {
     "url": "L2-Line.json"
   },
-  "width": 400,
-  "height": 400,
+  "width": 100,
+  "height": 100,
   "mark": "line",
   "encoding": {
     "x": {"field": "OWNER_DEPARTMENT", "type": "nominal", "title": "Departments"},
@@ -189,16 +142,9 @@ const spec7 = {
 };
 vegaEmbed("#vis7", spec7);
 
-const spec8 = {
+var spec8 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "data": { "url": "csvjson.json"},
-  "params": [
-    {
-        "name": "Origin",
-        "select": {"type": "point", "fields": ["Area"]},
-        "bind": "legend"
-    },
-],
   "title": "Popular Forms of Service Request Origin by Chicago Area",
   "mark": {"type": "bar", "tooltip": true},
   "encoding": {
@@ -208,25 +154,12 @@ const spec8 = {
     "color": {
       "field": "Origin",
       "scale": {"range": ["#D62728FF", "#2CA01CFF", "#1F77B4FF"]},
-      "opacity": {
-        "condition": {"param": "Origin", "value": 1},
-        "value": 0.1
-      },
-    },
-    "config": {
-      "legend": {
-          "padding": 5, 
-          "cornerRadius": 4, 
-          "fillColor": "#fff", 
-          "strokeColor": "#ccc",
-          "orient": "top"
-      }
-  }
+    }
   }
 };
 vegaEmbed("#vis8", spec8);
 
-const spec9 = {
+var spec9 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 400,
   "height": 400,
@@ -253,80 +186,3 @@ const spec9 = {
   }
 };
 vegaEmbed("#vis9", spec9);
-
-const spec10 = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 500,
-  "height": 500,
-  "title": {"text": "Chicago Zipcodes & 311 Service Requests","anchor": "start"},
-  "data": {
-    "url": "gdf_m.geojson",
-    "format": {
-      "type": "json",
-      "property": "features"
-    }},
-  "transform": [{
-      "type": "geojson",
-      "field": "geometry",
-      "filter": "datum.properties.zipcode !== 60666 && datum.properties.zipcode !== 60612"
-    }],
-
-    "params": [
-{
-"name": "highlight",
-"select": {"type": "point", "on": "pointerover"}
-},
-{"name": "select", "select": "point"}
-],
-
-  "mark": {
-      "type": "geoshape",
-      "cursor": "pointer"
-  },
-  "encoding": {
-    "color": {
-      "field": "properties.COUNT", 
-      "type": "quantitative",
-      "scale": {
-        "scheme": "viridis"
-      },
-      "title": "Count"
-    },
-    "fillOpacity": {
-      "condition": {"param": "select", "value": 1},
-      "value": 0.3
-    },
-    "tooltip": [
-      {
-        "field": "properties.zipcode",
-        "type": "quantitative",
-        "title": "Zip Code"
-      },
-      {
-        "field": "properties.COUNT",
-        "type": "quantitative",
-        "title": "Count"
-      }
-    ],
-    "strokeWidth": {
-      "condition": [
-        {
-          "param": "select",
-          "empty": false,
-          "value": 2
-        },
-        {
-          "param": "highlight",
-          "empty": false,
-          "value": 1
-        }
-      ],
-      "value": 0
-    }
-  },
-  "projection": {
-    "type": "mercator"
-  },
-};
-
-vegaEmbed("#vis10", spec10);

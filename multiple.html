@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style> body {font-family: system-ui, Arial} 
+        .center {
+        margin: auto;
+        width: auto;
+        border: 3px solid #ccc;
+        padding: 10px;
+    } 
+    </style>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CS 424 Assignment 4</title>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="singleView.html">Single View</a>
+            <a href="linkedView.html">Linked View</a>
+            <a href="multiple.html">Multiple Linked View</a>
+            <a href="spatialView.html">Spatial View</a>
+        </div>
+
+        <h1>Chicago Areas Analysis</h1>
+
+        <div>
+            <h3>Area Selection</h3>
+            <p> The following visualization displays a specific Chicago Area and the Community Areas that
+                comprise the Area. From the dropdown menu, select a Chicago Area and view the followed Linked
+                visualizations. </p>
+            <label for="areas">Choose an Area:</label>
+            <select name="charts" id="charts" onchange="js(this)">
+                <option value="n">Chicago</option>
+                <option value="c">Central Area</option>
+                <option value="fns">Far North Side</option>
+                <option value="fss">Far South Side</option>
+                <option value="fsw">Far Southwest Side</option>
+                <option value="ns">North Side</option>
+                <option value="nws">Northwest Side</option>
+                <option value="ss">South Side</option>
+                <option value="sws">Southwest Side</option>
+                <option value="ws">West Side</option>
+            </select>
+        </div>
+        <p id="p1"></p>
+        <div id="v" class = "center"></div>
+        <div id="v2" class = "center"></div>
+
+        <br>
+
+        <script src="./script-mv.js"></script>
+
+        <div>
+            <h3>Area Statistics</h3>
+            <p>These bar charts display some statical information about certain areas in Chicago. 
+            To interact with these charts, click a "Area" in the legend to highlight an area and
+            learn more about a certain area. </p>
+            <div id="vis" class="center"></div>
+        </div>
+
+        <script src="./script-mv2.js"></script>
+    </body>
+</html>
