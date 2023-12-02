@@ -125,8 +125,8 @@ var spec7 = {
   "data": {
     "url": "L2-Line.json"
   },
-  "width": 100,
-  "height": 100,
+  "width": 300,
+  "height": 300,
   "mark": "line",
   "encoding": {
     "x": {"field": "OWNER_DEPARTMENT", "type": "nominal", "title": "Departments"},
@@ -143,19 +143,29 @@ var spec7 = {
 vegaEmbed("#vis7", spec7);
 
 var spec8 = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "data": { "url": "csvjson.json"},
-  "title": "Popular Forms of Service Request Origin by Chicago Area",
-  "mark": {"type": "bar", "tooltip": true},
-  "encoding": {
-    "row": {"field": "Origin"},
-    "x": {"field": "Area"},
-    "y": {"field": "Count", "type": "quantitative"},
-    "color": {
-      "field": "Origin",
-      "scale": {"range": ["#D62728FF", "#2CA01CFF", "#1F77B4FF"]},
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": { "url": "csvjson.json"},
+    "mark": {"type": "bar", "tooltip": true},
+    "params": [
+        {
+        "name": "highlight",
+        "select": {"type": "point", "on": "pointerover"}
+        },
+        {"name": "select", "select": "point"}
+    ],
+    "encoding": {
+      "row": {"field": "Origin"},
+      "x": {"field": "Area"},
+      "y": {"field": "Count", "type": "quantitative"},
+      "color": {
+        "field": "Origin",
+        "scale": {"range": ["#D62728FF", "#2CA01CFF", "#1F77B4FF"]}
+      },
+      "fillOpacity": {
+        "condition": {"param": "select", "value": 1},
+        "value": 0.3
+      },
     }
-  }
 };
 vegaEmbed("#vis8", spec8);
 
