@@ -1,0 +1,32 @@
+[
+  {
+    "": 7,
+    "COMMUNITY_AREA": 8,
+    "Service Request Amount": 54771,
+    "Phone Calls": 25553,
+    "Internet": 13622,
+    "Mobile Device": 9159,
+    "Morning (AM) Requests": 32891,
+    "Afternoon (PM) Requests": 23552
+  },
+  {
+    "": 30,
+    "COMMUNITY_AREA": 32,
+    "Service Request Amount": 35509,
+    "Phone Calls": 15572,
+    "Internet": 8406,
+    "Mobile Device": 5513,
+    "Morning (AM) Requests": 20314,
+    "Afternoon (PM) Requests": 16316
+  },
+  {
+    "": 31,
+    "COMMUNITY_AREA": 33,
+    "Service Request Amount": 14635,
+    "Phone Calls": 7164,
+    "Internet": 4273,
+    "Mobile Device": 2200,
+    "Morning (AM) Requests": 9125,
+    "Afternoon (PM) Requests": 6011
+  }
+]

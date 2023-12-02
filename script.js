@@ -149,6 +149,9 @@ const spec6 = {
         "scheme": "goldred"
       }
     },
+    "projection": {
+      "type": "mercator"
+  },
     "tooltip": [{
       "field": "properties.ward",
       "type": "nominal",
@@ -188,18 +191,37 @@ vegaEmbed("#vis7", spec7);
 
 const spec8 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 400,
-  "height": 400,
-  "title": {"text": "Popular Forms of Service Request Origin by Chicago Area", "anchor": "start"},
-  "data": {
-    "url": "L3-Stacked.json"
-  },
-  "mark": "bar",
+  "data": { "url": "csvjson.json"},
+  "params": [
+    {
+        "name": "Origin",
+        "select": {"type": "point", "fields": ["Area"]},
+        "bind": "legend"
+    },
+],
+  "title": "Popular Forms of Service Request Origin by Chicago Area",
+  "mark": {"type": "bar", "tooltip": true},
   "encoding": {
+    "row": {"field": "Origin"},
     "x": {"field": "Area"},
     "y": {"field": "Count", "type": "quantitative"},
-    "xOffset": {"field": "Origin"},
-    "color": {"field": "Origin"}
+    "color": {
+      "field": "Origin",
+      "scale": {"range": ["#D62728FF", "#2CA01CFF", "#1F77B4FF"]},
+      "opacity": {
+        "condition": {"param": "Origin", "value": 1},
+        "value": 0.1
+      },
+    },
+    "config": {
+      "legend": {
+          "padding": 5, 
+          "cornerRadius": 4, 
+          "fillColor": "#fff", 
+          "strokeColor": "#ccc",
+          "orient": "top"
+      }
+  }
   }
 };
 vegaEmbed("#vis8", spec8);
@@ -248,7 +270,19 @@ const spec10 = {
       "field": "geometry",
       "filter": "datum.properties.zipcode !== 60666 && datum.properties.zipcode !== 60612"
     }],
-  "mark": "geoshape",
+
+    "params": [
+{
+"name": "highlight",
+"select": {"type": "point", "on": "pointerover"}
+},
+{"name": "select", "select": "point"}
+],
+
+  "mark": {
+      "type": "geoshape",
+      "cursor": "pointer"
+  },
   "encoding": {
     "color": {
       "field": "properties.COUNT", 
@@ -257,6 +291,10 @@ const spec10 = {
         "scheme": "viridis"
       },
       "title": "Count"
+    },
+    "fillOpacity": {
+      "condition": {"param": "select", "value": 1},
+      "value": 0.3
     },
     "tooltip": [
       {
@@ -269,45 +307,7 @@ const spec10 = {
         "type": "quantitative",
         "title": "Count"
       }
-    ]
-  },
-  "projection": {
-    "type": "mercator"
-  },
-};
-vegaEmbed("#vis10", spec10);
-
-const test = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 300,
-  "height": 300,
-  "title": {"text": "Amount of Service Requests Received (Time of Day)", "anchor": "start"},
-  "data": {
-    "url": "s3-meanAMPM.json",
-  },
-
-  "params": [
-    {
-      "name": "highlight",
-      "select": {"type": "point", "on": "pointerover"}
-    },
-    {"name": "select", "select": "point"}
-  ],
-
-  "mark": {
-    "type": "bar", 
-    "point": true, 
-    "tooltip": true,
-    "stroke": "black",
-    "cursor": "pointer"
-  },
-  "encoding": {
-    "x": {"field": "Time", "type": "ordinal"}, // Assuming 'Time' is an ordinal data type
-    "y": {"field": "Count", "type": "quantitative"},
-    "fillOpacity": {
-      "condition": {"param": "select", "value": 1},
-      "value": 0.3
-    },
+    ],
     "strokeWidth": {
       "condition": [
         {
@@ -324,10 +324,9 @@ const test = {
       "value": 0
     }
   },
-  "config": {
-    "scale": {
-      "bandPaddingInner": 0.2
-    }
-  }
+  "projection": {
+    "type": "mercator"
+  },
 };
-vegaEmbed("#visT", test);
+
+vegaEmbed("#vis10", spec10);

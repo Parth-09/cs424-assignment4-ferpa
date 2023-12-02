@@ -87,17 +87,3 @@
 #vis9 {
   grid-area: viz9;
 }
-
-.testg {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: 
-      "vizT";
-  gap: 20px;
-  width: 100%;
-  max-width: 1440px;
-  align-items: start;
-}
-#visT {
-  grid-area: vizT;
-}

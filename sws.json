@@ -1,0 +1,122 @@
+[
+  {
+    "": 54,
+    "COMMUNITY_AREA": 56,
+    "Service Request Amount": 56534,
+    "Phone Calls": 28080,
+    "Internet": 12076,
+    "Mobile Device": 7178,
+    "Morning (AM) Requests": 35163,
+    "Afternoon (PM) Requests": 23164
+  },
+  {
+    "": 55,
+    "COMMUNITY_AREA": 57,
+    "Service Request Amount": 25966,
+    "Phone Calls": 9842,
+    "Internet": 7802,
+    "Mobile Device": 3231,
+    "Morning (AM) Requests": 15743,
+    "Afternoon (PM) Requests": 10656
+  },
+  {
+    "": 56,
+    "COMMUNITY_AREA": 58,
+    "Service Request Amount": 54534,
+    "Phone Calls": 23011,
+    "Internet": 9988,
+    "Mobile Device": 6821,
+    "Morning (AM) Requests": 34951,
+    "Afternoon (PM) Requests": 20835
+  },
+  {
+    "": 57,
+    "COMMUNITY_AREA": 59,
+    "Service Request Amount": 32229,
+    "Phone Calls": 12273,
+    "Internet": 5922,
+    "Mobile Device": 4733,
+    "Morning (AM) Requests": 19724,
+    "Afternoon (PM) Requests": 13099
+  },
+  {
+    "": 59,
+    "COMMUNITY_AREA": 61,
+    "Service Request Amount": 73819,
+    "Phone Calls": 38120,
+    "Internet": 11428,
+    "Mobile Device": 7419,
+    "Morning (AM) Requests": 44180,
+    "Afternoon (PM) Requests": 31628
+  },
+  {
+    "": 60,
+    "COMMUNITY_AREA": 62,
+    "Service Request Amount": 23221,
+    "Phone Calls": 9870,
+    "Internet": 5292,
+    "Mobile Device": 3136,
+    "Morning (AM) Requests": 14885,
+    "Afternoon (PM) Requests": 8890
+  },
+  {
+    "": 61,
+    "COMMUNITY_AREA": 63,
+    "Service Request Amount": 49131,
+    "Phone Calls": 22064,
+    "Internet": 11218,
+    "Mobile Device": 6922,
+    "Morning (AM) Requests": 31307,
+    "Afternoon (PM) Requests": 18667
+  },
+  {
+    "": 62,
+    "COMMUNITY_AREA": 64,
+    "Service Request Amount": 34304,
+    "Phone Calls": 15735,
+    "Internet": 7075,
+    "Mobile Device": 4524,
+    "Morning (AM) Requests": 21800,
+    "Afternoon (PM) Requests": 13453
+  },
+  {
+    "": 63,
+    "COMMUNITY_AREA": 65,
+    "Service Request Amount": 36404,
+    "Phone Calls": 17108,
+    "Internet": 7379,
+    "Mobile Device": 4677,
+    "Morning (AM) Requests": 23852,
+    "Afternoon (PM) Requests": 13691
+  },
+  {
+    "": 64,
+    "COMMUNITY_AREA": 66,
+    "Service Request Amount": 71545,
+    "Phone Calls": 45530,
+    "Internet": 11828,
+    "Mobile Device": 7999,
+    "Morning (AM) Requests": 44465,
+    "Afternoon (PM) Requests": 29007
+  },
+  {
+    "": 65,
+    "COMMUNITY_AREA": 67,
+    "Service Request Amount": 78559,
+    "Phone Calls": 46794,
+    "Internet": 6351,
+    "Mobile Device": 4710,
+    "Morning (AM) Requests": 42064,
+    "Afternoon (PM) Requests": 37950
+  },
+  {
+    "": 66,
+    "COMMUNITY_AREA": 68,
+    "Service Request Amount": 65045,
+    "Phone Calls": 38558,
+    "Internet": 6086,
+    "Mobile Device": 3484,
+    "Morning (AM) Requests": 34138,
+    "Afternoon (PM) Requests": 32190
+  }
+]

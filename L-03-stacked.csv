@@ -1,0 +1,28 @@
+,Area,Origin,Count
+0,Central,Phone Calls,48289
+1,Central,Internet,26301
+2,Central,Mobile Device,16872
+0,Far North,Phone Calls,219741
+1,Far North,Internet,116145
+2,Far North,Mobile Device,72493
+0,Northwest,Phone Calls,169450
+1,Northwest,Internet,87764
+2,Northwest,Mobile Device,56629
+0,North Side,Phone Calls,141122
+1,North Side,Internet,96521
+2,North Side,Mobile Device,62025
+0,West Side,Phone Calls,325054
+1,West Side,Internet,113560
+2,West Side,Mobile Device,83028
+0,Far South,Phone Calls,299991
+1,Far South,Internet,54089
+2,Far South,Mobile Device,25322
+0,Far South,Phone Calls,199987
+1,Far South,Internet,46487
+2,Far South,Mobile Device,23794
+0,Southwest,Phone Calls,306985
+1,Southwest,Internet,102445
+2,Southwest,Mobile Device,64834
+0,South Side,Phone Calls,210634
+1,South Side,Internet,49552
+2,South Side,Mobile Device,27763

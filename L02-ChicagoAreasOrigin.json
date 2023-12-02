@@ -1,0 +1,36 @@
+[{
+    "Origin": "Phone Calls",
+    "Central":48289,
+    "Far North":219741,
+    "Northwest":169450,
+    "North Side":141122,
+    "West Side":325054,
+    "Far South":299991,
+    "Far Southwest":199987,
+    "South West":306985,
+    "South Side":210634
+},
+{   "Origin": "Internet",
+    "Central":26301,
+    "Far North":116145,
+    "Northwest":87764,
+    "North Side":96521,
+    "West Side":113560,
+    "Far South":54089,
+    "Far Southwest":46487,
+    "South West":102445,
+    "South Side":49552
+},
+{
+    "Origin": "Mobile Device",
+    "Central":16872,
+    "Far North":72493,
+    "Northwest":56629,
+    "North Side":62025,
+    "West Side":83028,
+    "Far South":25322,
+    "Far Southwest":23794,
+    "South West":64834,
+    "South Side":27763
+}
+]

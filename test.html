@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<style> body {font-family: system-ui, Arial} </style>
+<style> body {font-family: system-ui, Arial} 
+    .center {
+    margin: auto;
+    width: auto;
+    border: 3px solid #ccc;
+    padding: 10px;
+  } 
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -17,15 +24,629 @@
       <a href="index.html">Home</a>
       <a href="singleView.html">Single View</a>
       <a href="linkedView.html">Linked View</a>
+      <a href="test.html">Multiple Linked View</a>
       <a href="spatialView.html">Spatial View</a>
     </div>
 
-    <h1>test</h1>
-    <div class="testg">
-        <div class="visualization" id="visT"></div>        
+    <h1>Chicago Areas Analysis</h1>
+
+    <div>
+        <h3>Area Selection</h3>
+        <label for="areas">Choose an Area:</label>
+
+        <select name="charts" id="charts" onchange="js(this)">
+            <option value="n">Select option</option>
+            <option value="c">Central Area</option>
+            <option value="fns">Far North Side</option>
+            <option value="fss">Far South Side</option>
+            <option value="fsw">Far Southwest Side</option>
+            <option value="ns">North Side</option>
+            <option value="nws">Northwest Side</option>
+            <option value="ss">South Side</option>
+            <option value="sws">Southwest Side</option>
+            <option value="ws">West Side</option>
+        </select>
+    </div>
+    <p id="p1"></p>
+    <div id="v" class = "center"></div>
+    <div id="v2" class = "center"></div>
+
+    <br>
+
+    <script>
+        function js(dropdown) {
+            var option_value = dropdown.options[dropdown.selectedIndex].value;   
+            if (option_value == "n") {
+                var n = {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                    "width": 400,
+                    "height": 400,
+                    "title": {"text": "Chicago Spatial Visualization: Community Area","anchor": "start"},
+                    "data": {
+                      "url": "boundaries-community_area.geojson",
+                      "format": {
+                        "type": "topojson",
+                        "feature": "features",
+                      }
+                    },
+                    "mark": {
+                      "type": "geoshape", 
+                    },
+                    "encoding": {
+                      "strokeWidth": {"value": 1},
+                      "stroke": {"value": "black"},
+                      "fill": {"value": "white"}
+                    },
+                    "projection": {
+                        "type": "mercator"
+                    },
+                  };
+                  vegaEmbed("#v", n);
+
+            } else if (option_value == "c") {
+                document.getElementById("p1").innerHTML = "Central includes Community Areas 8, 32 and 33."; 
+                var v1 = {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                    "title": "Central: Community Areas Map",
+                            "data": {
+                                "url": "gdf_ctl.geojson",
+                                "format": {
+                                "type": "topojson",
+                                "feature": "features",
+                                }
+                            },
+                            "mark": {
+                                "type": "geoshape", 
+                            },
+                            "encoding": {
+                                "strokeWidth": {"value": 1},
+                                "stroke": {"value": "black"},
+                                "fill": {"value": "white"}
+                            },
+                            "projection": {
+                                "type": "mercator"
+                            },
+                };
+                vegaEmbed("#v", v1);
+
+                var v1A = {
+                        "data": {
+                            "url": "c.json"
+                        },
+                        "repeat": ["Phone Calls", "Internet", "Mobile Device"],
+                        "title": "Total Amount of Requests Origin Types per Community Area",
+                        "spec": {
+                            "mark": {"type": "bar", "tooltip": true},
+                            "encoding": {
+                                "x": {"field": "COMMUNITY_AREA"},
+                                "y": { 
+                                    "field": {"repeat":"repeat"},
+                                    "type": "quantitative"
+                                },
+                                "color": {
+                                    "field":"COMMUNITY_AREA",
+                                },
+                            }
+                    }
+                }
+                vegaEmbed("#v2", v1A);
+            } else if (option_value == "fns") {
+                document.getElementById("p1").innerHTML = "Far North Side includes Community Areas 1, 2, 3, 4, 9, 10, 11, 12, 13, 14 and 77."; 
+                var v2 = {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                    "title": "Far Northside: Community Areas Map",
+                    "hconcat": [
+                        {
+                            "data": {
+                                "url": "gdf_fns.geojson",
+                                "format": {
+                                "type": "topojson",
+                                "feature": "features",
+                                }
+                            },
+                            "mark": {
+                                "type": "geoshape", 
+                            },
+                            "encoding": {
+                                "strokeWidth": {"value": 1},
+                                "stroke": {"value": "black"},
+                                "fill": {"value": "white"}
+                            },
+                            "projection": {
+                                "type": "mercator"
+                        },
+                    }
+                    ]
+                };
+                vegaEmbed("#v", v2);
+
+                var v2A = {
+                    "data": {
+                        "url": "fns.json"
+                    },
+                    "repeat": ["Phone Calls", "Internet", "Mobile Device"],
+                    "title": "Total Amount of Requests Origin Types per Area",
+                    "spec": {
+                        "mark": {"type": "bar", "tooltip": true},
+                        "encoding": {
+                            "x": {"field": "COMMUNITY_AREA"},
+                            "y": { 
+                                "field": {"repeat":"repeat"},
+                                "type": "quantitative"
+                            },
+                            "color": {
+                                "field":"COMMUNITY_AREA",
+                            },
+                        }
+                }
+            }
+                vegaEmbed("#v2", v2A);
+            } else if (option_value == "fss") {
+                document.getElementById("p1").innerHTML = "Far South Side includes Community Areas 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54 and 55."; 
+                var v3 = {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+        
+                    "hconcat": [
+                        {
+                            "data": {
+                                "url": "gdf_fss.geojson",
+                                "format": {
+                                "type": "topojson",
+                                "feature": "features",
+                                }
+                            },
+                            "mark": {
+                                "type": "geoshape", 
+                            },
+                            "encoding": {
+                                "strokeWidth": {"value": 1},
+                                "stroke": {"value": "black"},
+                                "fill": {"value": "white"}
+                            },
+                            "projection": {
+                                "type": "mercator"
+                        },
+                    }
+                    ]
+                };
+                vegaEmbed("#v", v3);
+
+                var v3A = {
+                    "data": {
+                        "url": "fss.json"
+                    },
+                    "repeat": ["Phone Calls", "Internet", "Mobile Device"],
+                    "title": "Total Amount of Requests Origin Types per Area",
+                    "spec": {
+                        "mark": {"type": "bar", "tooltip": true},
+                        "encoding": {
+                            "x": {"field": "COMMUNITY_AREA"},
+                            "y": { 
+                                "field": {"repeat":"repeat"},
+                                "type": "quantitative"
+                            },
+                            "color": {
+                                "field":"COMMUNITY_AREA",
+                            },
+                        }
+                }
+            }
+                vegaEmbed("#v2", v3A);
+            } else if (option_value == "fsw") {
+                document.getElementById("p1").innerHTML = "Far Southwest Side includes Community Areas 70, 71, 72, 73, 74 and 75.";
+                var v4 = {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                    "title": "Far South Side: Community Areas Map",
+                    "hconcat": [
+                        {
+                            "data": {
+                                "url": "gdf_fsw.geojson",
+                                "format": {
+                                "type": "topojson",
+                                "feature": "features",
+                                }
+                            },
+                            "mark": {
+                                "type": "geoshape", 
+                            },
+                            "encoding": {
+                                "strokeWidth": {"value": 1},
+                                "stroke": {"value": "black"},
+                                "fill": {"value": "white"}
+                            },
+                            "projection": {
+                                "type": "mercator"
+                        },
+                    }
+                    ]
+                };
+                vegaEmbed("#v", v4);
+
+                var v4A = {
+                    "data": {
+                        "url": "fsw.json"
+                    },
+                    "repeat": ["Phone Calls", "Internet", "Mobile Device"],
+                    "title": "Total Amount of Requests Origin Types per Community Area",
+                    "spec": {
+                        "mark": {"type": "bar", "tooltip": true},
+                        "encoding": {
+                            "x": {"field": "COMMUNITY_AREA"},
+                            "y": { 
+                                "field": {"repeat":"repeat"},
+                                "type": "quantitative"
+                            },
+                            "color": {
+                                "field":"COMMUNITY_AREA",
+                            },
+                        }
+                    }
+                }
+                vegaEmbed("#v2", v4A);
+
+            } else if (option_value == "ns") {
+                document.getElementById("p1").innerHTML = "North Side includes Community Areas 5, 6, 7, 21 and 22.";
+                var v5 = {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                    "title": "North Side: Community Areas Map",
+                    "hconcat": [
+                        {
+                            "data": {
+                                "url": "gdf_ns.geojson",
+                                "format": {
+                                "type": "topojson",
+                                "feature": "features",
+                                }
+                            },
+                            "mark": {
+                                "type": "geoshape", 
+                            },
+                            "encoding": {
+                                "strokeWidth": {"value": 1},
+                                "stroke": {"value": "black"},
+                                "fill": {"value": "white"},
+                            },
+                            "projection": {
+                                "type": "mercator"
+                        },
+                    }
+                    ]
+                };
+                vegaEmbed("#v", v5);
+
+                var v5A = {
+                    "data": {
+                        "url": "ns.json"
+                    },
+                    "repeat": ["Phone Calls", "Internet", "Mobile Device"],
+                    "title": "Total Amount of Requests Origin Types per Area",
+                    "spec": {
+                        "mark": {"type": "bar", "tooltip": true},
+                        "encoding": {
+                            "x": {"field": "COMMUNITY_AREA"},
+                            "y": { 
+                                "field": {"repeat":"repeat"},
+                                "type": "quantitative"
+                            },
+                            "color": {
+                                "field":"COMMUNITY_AREA",
+                            },
+                        }
+                    }
+                }
+                vegaEmbed("#v2", v5A);
+            } else if (option_value == "nws") {
+                document.getElementById("p1").innerHTML = "Northwest Side includes Community Areas 15, 16, 17, 18, 19 and 20.";
+                var v6 = {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                    "title": "Northwest Side: Community Areas Map",
+                    "hconcat": [
+                        {
+                            "data": {
+                                "url": "gdf_nws.geojson",
+                                "format": {
+                                "type": "topojson",
+                                "feature": "features",
+                                }
+                            },
+                            "mark": {
+                                "type": "geoshape", 
+                            },
+                            "encoding": {
+                                "strokeWidth": {"value": 1},
+                                "stroke": {"value": "black"},
+                                "fill": {"value": "white"}
+                            },
+                            "projection": {
+                                "type": "mercator"
+                        },
+                    }
+                    ]
+                };
+                vegaEmbed("#v", v6);
+
+                var v6A = {
+                    "data": {
+                        "url": "nws.json"
+                    },
+                    "repeat": ["Phone Calls", "Internet", "Mobile Device"],
+                    "title": "Total Amount of Requests Origin Types per Community Area",
+                    "spec": {
+                        "mark": {"type": "bar", "tooltip": true},
+                        "encoding": {
+                            "x": {"field": "COMMUNITY_AREA"},
+                            "y": { 
+                                "field": {"repeat":"repeat"},
+                                "type": "quantitative"
+                            },
+                            "color": {
+                                "field":"COMMUNITY_AREA",
+                            },
+                        }
+                    }
+                }
+                vegaEmbed("#v2", v6A);
+            } else if (option_value == "ss") {
+                document.getElementById("p1").innerHTML = "South Side includes Community Areas 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 60 and 69.";
+                var v7 = {
+                
+                "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                "title": "South Side: Community Areas Map",
+                "hconcat": [
+                    {
+                        "data": {
+                            "url": "gdf_ss.geojson",
+                            "format": {
+                            "type": "topojson",
+                            "feature": "features",
+                            }
+                        },
+                        "mark": {
+                            "type": "geoshape", 
+                        },
+                        "encoding": {
+                            "strokeWidth": {"value": 1},
+                            "stroke": {"value": "black"},
+                            "fill": {"value": "white"}
+                        },
+                        "projection": {
+                            "type": "mercator"
+                    },
+                }
+                ]
+            };
+                vegaEmbed("#v", v7);
+
+                var v7A = {
+                    "data": {
+                        "url": "ss.json"
+                    },
+                    "repeat": ["Phone Calls", "Internet", "Mobile Device"],
+                    "title": "Total Amount of Requests Origin Types per Community Area",
+                    "spec": {
+                        "mark": {"type": "bar", "tooltip": true},
+                        "encoding": {
+                            "x": {"field": "COMMUNITY_AREA"},
+                            "y": { 
+                                "field": {"repeat":"repeat"},
+                                "type": "quantitative"
+                            },
+                            "color": {
+                                "field":"COMMUNITY_AREA",
+                            },
+                        }
+                    }
+                }
+                vegaEmbed("#v2", v7A);
+            } else if (option_value == "sws") {
+                document.getElementById("p1").innerHTML = "Southwest Side includes Community Areas 56, 57, 58, 59, 61, 62, 63, 64, 65, 66, 67 and 68."
+                var v8 = {
+                    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                    "title": "Southwest Side: Community Areas Map",
+                    "hconcat": [
+                        {
+                            "data": {
+                                "url": "gdf_ssw.geojson",
+                                "format": {
+                                "type": "topojson",
+                                "feature": "features",
+                                }
+                            },
+                            "mark": {
+                                "type": "geoshape", 
+                            },
+                            "encoding": {
+                                "strokeWidth": {"value": 1},
+                                "stroke": {"value": "black"},
+                                "fill": {"value": "white"}
+                            },
+                            "projection": {
+                                "type": "mercator"
+                        },
+                    }
+                    ]
+                };
+                vegaEmbed("#v", v8);
+
+                var v8A = {
+                    "data": {
+                        "url": "sws.json"
+                    },
+                    "repeat": ["Phone Calls", "Internet", "Mobile Device"],
+                    "title": "Total Amount of Requests Origin Types per Community Area",
+                    "spec": {
+                        "mark": {"type": "bar", "tooltip": true},
+                        "encoding": {
+                            "x": {"field": "COMMUNITY_AREA"},
+                            "y": { 
+                                "field": {"repeat":"repeat"},
+                                "type": "quantitative"
+                            },
+                            "color": {
+                                "field":"COMMUNITY_AREA",
+                            },
+                        }
+                    }
+                }
+                vegaEmbed("#v2", v8A);
+            } else if (option_value == "ws") {
+                document.getElementById("p1").innerHTML = "West Side includes Community Areas 23, 24, 25, 26, 27, 29, 30 and 31."
+                var v9 = {"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                    "title": "West Side: Community Areas Map",
+                    "hconcat": [
+                        {
+                            "data": {
+                                "url": "gdf_ws.geojson",
+                                "format": {
+                                "type": "topojson",
+                                "feature": "features",
+                                }
+                            },
+                            "mark": {
+                                "type": "geoshape", 
+                            },
+                            "encoding": {
+                                "strokeWidth": {"value": 1},
+                                "stroke": {"value": "black"},
+                                "fill": {"value": "white"}
+                            },
+                            "projection": {
+                                "type": "mercator"
+                        },
+                    }
+                    ]
+                };
+                vegaEmbed("#v", v9);
+
+                var v9A = {
+                    "data": {
+                        "url": "ws.json"
+                    },
+                    "repeat": ["Phone Calls", "Internet", "Mobile Device"],
+                    "title": "Total Amount of Requests Origin Types per Community Area",
+                    "spec": {
+                        "mark": {"type": "bar", "tooltip": true},
+                        "encoding": {
+                            "x": {"field": "COMMUNITY_AREA"},
+                            "y": { 
+                                "field": {"repeat":"repeat"},
+                                "type": "quantitative"
+                            },
+                            "color": {
+                                "field":"COMMUNITY_AREA",
+                            },
+                        }
+                    }
+                }
+                vegaEmbed("#v2", v9A);
+            }
+        }
+    </script>
+
+    <div>
+        <h3>Area Statistics</h3>
+        <p>These bar charts display some statical information about certain areas in Chicago. 
+        To interact with these charts, click a "Area" in the legend to highlight an area and
+        learn more about a certain area. </p>
+        <div id="vis" class="center"></div>
     </div>
 
-    <script src="./script.js"></script>
+    <script>
+        var v1 = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {"url": "multiview02.json"},
+            "params": [
+            {
+                "name": "Origin",
+                "select": {"type": "point", "fields": ["Area"]},
+                "bind": "legend"
+            },
+        ],
+            "vconcat": [
+
+            {
+                "hconcat": [
+                    {
+                        "mark": {"type": "bar", "tooltip":true},
+                        "title": "Total Amount of Service Requests per Area",
+                        "encoding": {
+                            "x":{"field":"Area"},
+                            "y": {
+                                "aggregate": "sum", 
+                                "field": "Service Request Amount",
+                                "type": "quantitative"
+                            },
+                            "color": {
+                                "field":"Area"
+                            },
+                            "opacity": {
+                                "condition": {"param": "Origin", "value": 1},
+                                "value": 0.1
+                            },
+                        },
+                    },
+
+                    {
+                        "repeat": ["Morning (AM) Requests", "Afternoon (PM) Requests"],
+                        "title": "Total Amount of Requests Origin Types per Area",
+                        "spec": {
+                            "mark": {"type": "bar", "tooltip": true},
+                            "encoding": {
+                                "x": {"field": "Area"},
+                                "y": {
+                                    "aggregate": "sum", 
+                                    "field": {"repeat": "repeat"}
+                                },
+                                "color": {
+                                    "field":"Area",
+                                },
+                                "opacity": {
+                                    "condition": {"param": "Origin", "value": 1},
+                                    "value": 0.1
+                                },
+                            }
+                        },
+                    },
+
+                ]
+            },
+
+
+            {
+                "repeat": ["Phone Calls", "Internet", "Mobile Device"],
+                "title": "Total Amount of Requests Origin Types per Area",
+                "spec": {
+                    "mark": {"type": "bar", "tooltip": true},
+                    "encoding": {
+                        "x": {"field": "Area"},
+                        "y": {
+                            "aggregate": "sum", 
+                            "field": {"repeat": "repeat"}
+                        },
+                        "color": {
+                            "field":"Area",
+                        },
+                        "opacity": {
+                            "condition": {"param": "Origin", "value": 1},
+                            "value": 0.1
+                        },
+                    }
+                },
+            },
+            ],
+
+            "config": {
+                "legend": {
+                    "padding": 5, 
+                    "cornerRadius": 4, 
+                    "fillColor": "#fff", 
+                    "strokeColor": "#ccc",
+                    "orient": "top"
+                }
+            }
+        }
+        vegaEmbed("#vis", v1);
+    </script>
 </body>
 
 </html>
