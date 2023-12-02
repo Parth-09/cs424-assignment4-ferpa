@@ -65,7 +65,7 @@ These visualizations give us an idea of the different service requests that were
 ### Linked Visualization 2
 The count for different Origin types per Area give a vivid distribution for people that use different mediums to make a request. It is observed that the most number of requests are made through phone calls followed by the Internet and lastly the Mobile Device. The type of Origin varies through every area but the lowest count is seen in the Central region.
 
-![IMG2-3](lv/lv-0w.png)
+![IMG2-3](lv/lv-02.png)
 
 ### Linked Visualization 3
 Here is a scatter plot for the different types of service requests made via the citizens of Chicago and the average number of days taken by the 311 Services Department to complete it. We could see that the Tree Planting Request which is between the range of 400-450 which is the highest so far. These values are specific only to a few service request types but most requests are completed in time.
