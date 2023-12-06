@@ -94,6 +94,16 @@ The following visualization is for Central Community areas.
 
 ![IMG3-4](mlv/mlv4.png)
 
+### Multiple Linked View Visualization 5
+The following visulization is for searching different ward numbers and giving results based on the specific ward. For example, an input of 10 will display the number of service requests for that ward.
+
+![IMG3-5](iv/searchWard.png)
+
+### Multiple Linked View Visualization 6
+This visualization displays the number of requests for a particular zip code. For example, 60625 will display the number of service requests for that zip code.
+
+![IMG3-6](iv/searchZip.png)
+
 
 ## Spatial Visualization
 
